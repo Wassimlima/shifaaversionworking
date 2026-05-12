@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>بوابة المندوب الطبي — شفاء ديزاد</title>
+  <link rel="stylesheet" href="../../css/main.css">
+  <link rel="stylesheet" href="../../css/dashboard.css">
+</head>
+<body class="dashboard">
+
+<!-- Header -->
+<header class="dash-header">
+  <div class="dash-brand">
+    <div class="logo" style="background:var(--secondary)">🧑‍⚕️</div>
+    <div>
+      <h1 id="rep-name">بوابة المندوب</h1>
+      <small id="rep-region">جارٍ التحميل...</small>
+    </div>
+  </div>
+  <div class="dash-header-actions">
+    <span class="dash-notif urgent" id="urgent-notif" style="display:none">⚠️ 0 تنبيه عاجل</span>
+    <a href="../../index.html" class="dash-icon-btn" title="الموقع الرئيسي">🌐</a>
+    <a href="pharmacy.html" class="btn btn-outline btn-sm" style="border-color:rgba(255,255,255,0.3);color:white">لوحة الصيدلية</a>
+  </div>
+</header>
+
+<div class="dash-content">
+  <div class="dash-welcome animate-up">
+    <h2>مرحباً 👋</h2>
+    <p>متابعة مخزون منتجاتك، التنبيهات، والصيدليات الشريكة</p>
+  </div>
+
+  <!-- Stats -->
+  <div class="dash-stats animate-up anim-delay-1">
+    <div class="stat-card">
+      <div class="stat-icon blue">💊</div>
+      <div class="stat-info">
+        <p>عدد المنتجات</p>
+        <strong id="st-products">—</strong>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon green">🤝</div>
+      <div class="stat-info">
+        <p>صيدليات شريكة</p>
+        <strong id="st-partners">—</strong>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon red">⚠️</div>
+      <div class="stat-info">
+        <p>تنبيهات عاجلة</p>
+        <strong id="st-alerts">—</strong>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon orange">📤</div>
+      <div class="stat-info">
+        <p>طلبات تموين</p>
+        <strong id="st-resupply">—</strong>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tabs -->
+  <div class="tabs-wrapper animate-up anim-delay-2">
+    <div class="tabs-nav" style="margin-bottom:1.25rem;width:100%">
+      <button class="tab-btn active" data-tab="products">
+        💊 منتجاتي
+      </button>
+      <button class="tab-btn" data-tab="alerts" style="position:relative">
+        ⚠️ التنبيهات
+        <span class="tab-badge" id="tab-alerts-badge" style="display:none">0</span>
+      </button>
+      <button class="tab-btn" data-tab="partners">
+        🤝 الصيدليات الشريكة
+      </button>
+      <button class="tab-btn" data-tab="resupply" style="position:relative">
+        📤 طلباتي
+        <span class="tab-badge" id="tab-resupply-badge" style="display:none">0</span>
+      </button>
+    </div>
+
+    <!-- Products -->
+    <div class="tab-panel active" id="panel-products">
+      <div id="products-content"><div class="spinner" style="margin:2rem auto"></div></div>
+    </div>
+
+    <!-- Alerts -->
+    <div class="tab-panel" id="panel-alerts">
+      <div id="alerts-content"><div class="spinner" style="margin:2rem auto"></div></div>
+    </div>
+
+    <!-- Partners -->
+    <div class="tab-panel" id="panel-partners">
+      <div id="partners-content"><div class="spinner" style="margin:2rem auto"></div></div>
+    </div>
+
+    <!-- My resupply requests -->
+    <div class="tab-panel" id="panel-resupply">
+      <div class="table-card">
+        <div class="card-header">
+          <h3 style="font-weight:700;font-size:1rem">📤 طلبات التموين المُرسلة</h3>
+        </div>
+        <div style="padding:1rem" id="resupply-content"><div class="spinner" style="margin:2rem auto"></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Resupply Request Modal -->
+<div class="modal-overlay hidden" id="resupply-modal">
+  <div class="modal">
+    <div class="modal-header">
+      <h3>🔄 طلب إعادة التموين</h3>
+      <button class="modal-close" data-modal-close="resupply-modal">✕</button>
+    </div>
+    <div class="modal-body">
+      <div style="background:var(--muted-bg);border-radius:var(--radius);padding:0.85rem;margin-bottom:1.25rem">
+        <div style="font-size:0.82rem;color:var(--muted);margin-bottom:0.4rem">معلومات الطلب</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;font-size:0.875rem">
+          <div><span style="color:var(--muted)">المنتج: </span><strong id="rs-product">—</strong></div>
+          <div><span style="color:var(--muted)">الصيدلية: </span><strong id="rs-pharmacy">—</strong></div>
+          <div><span style="color:var(--muted)">المتبقي: </span><strong style="color:var(--orange)" id="rs-remaining">—</strong></div>
+        </div>
+      </div>
+      <form id="resupply-form">
+        <div class="input-group">
+          <label>الكمية المطلوبة</label>
+          <input type="number" id="rs-qty" class="input" min="1" value="10" required>
+        </div>
+        <div class="input-group">
+          <label>ملاحظات (اختياري)</label>
+          <textarea id="rs-message" class="input" rows="3" placeholder="أي تفاصيل إضافية..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">إرسال الطلب</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- New Partnership Modal -->
+<div class="modal-overlay hidden" id="new-partner-modal">
+  <div class="modal">
+    <div class="modal-header">
+      <h3>🤝 طلب شراكة جديدة</h3>
+      <button class="modal-close" data-modal-close="new-partner-modal">✕</button>
+    </div>
+    <div class="modal-body">
+      <form id="new-partner-form">
+        <div class="input-group">
+          <label>رقم الصيدلية</label>
+          <input type="number" id="np-pharmacy-id" class="input" min="1" placeholder="مثال: 3" required>
+          <small style="color:var(--muted);font-size:0.75rem;margin-top:0.25rem;display:block">ابحث عن الصيدلية في <a href="../pharmacies.html" target="_blank" style="color:var(--primary)">دليل الصيدليات</a> لمعرفة رقمها</small>
+        </div>
+        <div class="input-group">
+          <label>رسالة (اختياري)</label>
+          <textarea id="np-message" class="input" rows="3" placeholder="عرّف بنفسك وسبب طلب الشراكة..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">إرسال الطلب</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="../../js/config.js"></script>
+<script src="../../js/api.js"></script>
+<script src="../../js/main.js"></script>
+<script src="../../js/dashboard-medrep.js"></script>
+</body>
+</html>
