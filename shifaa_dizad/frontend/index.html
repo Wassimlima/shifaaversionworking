@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>شفاء ديزاد — البحث عن الأدوية في الجزائر</title>
+  <link rel="stylesheet" href="css/main.css?v=999">
+<link rel="stylesheet" href="css/home.css?v=999">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+  <a href="index.html" class="navbar-brand">
+   <div class="logo-icon" style="
+background:linear-gradient(135deg,#10b981,#14b8a6);
+border-radius:14px;
+width:42px;
+height:42px;
+display:flex;
+align-items:center;
+justify-content:center;
+box-shadow:0 10px 25px rgba(16,185,129,.25);
+">
+
+<div style="
+width:18px;
+height:18px;
+border:3px solid white;
+border-radius:6px;
+transform:rotate(45deg);
+position:relative;
+">
+
+<div style="
+position:absolute;
+top:50%;
+left:50%;
+width:8px;
+height:8px;
+background:white;
+border-radius:2px;
+transform:translate(-50%,-50%);
+"></div>
+
+</div>
+
+</div>
+    <span>شفاء<span style="color:var(--primary)">ديزاد</span></span>
+  </a>
+  <ul class="navbar-links">
+    <li><a href="index.html" class="active">الرئيسية</a></li>
+    <li><a href="pages/search.html">بحث عن دواء</a></li>
+    <li><a href="pages/pharmacies.html">الصيدليات</a></li>
+    <li><a href="pages/labs.html">مخابر التحاليل</a></li>
+    <li><a href="pages/donations.html">التضامن الصحي</a></li>
+    <li><a href="pages/pricing.html">الاشتراكات</a></li>
+    <li><a href="pages/contact.html">تواصل معنا</a></li>
+  </ul>
+  <div class="navbar-actions">
+
+  <a href="pages/pricing.html?role=pharmacy"
+     class="btn btn-glass">
+     للصيدليات
+  </a>
+
+  <a href="pages/pricing.html?role=rep"
+     class="btn btn-primary-modern">
+     للمندوبين
+  </a>
+
+</div>
+<a href="pages/prescription.html" class="upload-rx-btn">
+
+    <div class="rx-glow"></div>
+
+    <div class="rx-icon">
+        📄
+    </div>
+
+    <div class="rx-content">
+        <span class="rx-title">
+            رفع الوصفة الطبية
+        </span>
+
+        <span class="rx-subtitle">
+            الذكاء الاصطناعي سيقرأ الوصفة ويقترح الأدوية البديلة
+        </span>
+    </div>
+
+    <div class="rx-status">
+        تحت الإنشاء
+    </div>
+
+</a>
+  <button class="navbar-toggle" id="navbar-toggle" aria-label="القائمة">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobile-menu">
+  <a href="index.html">🏠 الرئيسية</a>
+  <a href="pages/search.html">🔍 بحث عن دواء</a>
+  <a href="pages/pharmacies.html">🏥 الصيدليات</a>
+  <a href="pages/labs.html">🧪 مخابر التحاليل</a>
+  <a href="pages/donations.html">🎁 التضامن الصحي</a>
+  <a href="pages/pricing.html">💳 الاشتراكات</a>
+
+  <a href="pages/pricing.html?role=pharmacy">
+    🏥 اشتراك الصيدليات
+  </a>
+
+  <a href="pages/pricing.html?role=rep">
+    💼 اشتراك المندوبين
+  </a>
+
+  <a href="pages/contact.html">📞 تواصل معنا</a>
+</div>
+<!-- PREMIUM HERO SECTION -->
+<section class="hero-premium">
+  <div class="hero-bg"></div>
+  <div class="hero-glow hero-glow-1"></div>
+  <div class="hero-glow hero-glow-2"></div>
+
+  <div class="floating floating-pill">💊</div>
+  <div class="floating floating-heart">🩺</div>
+  <div class="floating floating-lab">🧪</div>
+
+  <div class="container">
+    <div class="hero-premium-content">
+
+      <div class="hero-top-badge">
+        <span class="pulse-dot"></span>
+        منصة الصحة الرقمية الجزائرية
+      </div>
+
+      <h1 class="premium-title">
+        اعثر على <span>ادويتك</span><br>
+        و مستلزماتك الطبية<br>
+        بسهولة في الجزائر
+      </h1>
+
+      <p class="premium-subtitle">
+        ابحث عن الأدوية، مخابر التحاليل، الأجهزة الطبية، والصيدليات المناوبة
+        في جميع الولايات الجزائرية عبر تجربة حديثة وسريعة.
+      </p>
+
+      <div class="hero-actions">
+        <a href="pages/search.html" class="btn-premium primary">
+          🔍 ابدأ البحث
+        </a>
+
+        <a href="pages/prescription.html" class="btn-premium secondary">
+          📋 رفع وصفة
+        </a>
+      </div>
+
+      <form class="premium-search-box" id="hero-search-form">
+        <div class="search-icon">🔎</div>
+
+        <input
+          type="text"
+          id="hero-search-input"
+          placeholder="ابحث عن دواء، تحليل، جهاز طبي..."
+        >
+
+        <select id="hero-search-type">
+          <option value="">كل التصنيفات</option>
+          <option value="medicine">دواء</option>
+          <option value="device">جهاز طبي</option>
+          <option value="analysis">تحاليل</option>
+          <option value="cosmetic">مواد تجميل</option>
+        </select>
+
+        <button type="submit">
+          بحث
+        </button>
+      </form>
+
+      <div class="trust-row">
+        <div class="trust-item">✅ 58 ولاية</div>
+        <div class="trust-item">🏥 +488 صيدلية</div>
+        <div class="trust-item">🧪 مخابر تحاليل</div>
+        <div class="trust-item">⚡ بحث فوري</div>
+      </div>
+
+      <div class="premium-stats">
+
+        <div class="premium-stat-card">
+          <h3>12.4K+</h3>
+          <p>دواء مسجل</p>
+        </div>
+
+        <div class="premium-stat-card">
+          <h3>488</h3>
+          <p>صيدلية</p>
+        </div>
+
+        <div class="premium-stat-card">
+          <h3>58</h3>
+          <p>ولاية</p>
+        </div>
+
+        <div class="premium-stat-card">
+          <h3>24/7</h3>
+          <p>خدمة مستمرة</p>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Categories -->
+<section class="section" style="background:white">
+  <div class="container">
+    <div class="section-header animate-up">
+      <span class="section-label">التصنيفات</span>
+      <h2>تصفح حسب التصنيف</h2>
+      <p>اختر التصنيف المناسب للعثور على ما تحتاجه بسرعة</p>
+    </div>
+    <div class="categories-grid" id="categories-grid">
+      <!-- JS loaded -->
+      <div class="skeleton" style="height:130px;border-radius:var(--radius-lg)"></div>
+      <div class="skeleton" style="height:130px;border-radius:var(--radius-lg)"></div>
+      <div class="skeleton" style="height:130px;border-radius:var(--radius-lg)"></div>
+      <div class="skeleton" style="height:130px;border-radius:var(--radius-lg)"></div>
+      <div class="skeleton" style="height:130px;border-radius:var(--radius-lg)"></div>
+      <div class="skeleton" style="height:130px;border-radius:var(--radius-lg)"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Popular medicines -->
+<section class="section">
+  <div class="container">
+    <div class="section-header animate-up">
+      <span class="section-label">الأكثر طلباً</span>
+      <h2>أدوية شائعة ومتوفرة</h2>
+      <p>أكثر الأدوية المطلوبة والمتوفرة الآن في صيدليات قريبة</p>
+    </div>
+    <div class="grid-3" id="popular-grid">
+      <div class="skeleton" style="height:160px;border-radius:var(--radius-lg)"></div>
+      <div class="skeleton" style="height:160px;border-radius:var(--radius-lg)"></div>
+      <div class="skeleton" style="height:160px;border-radius:var(--radius-lg)"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Donations preview -->
+<section class="section" style="background:white">
+  <div class="container">
+    <div class="section-header animate-up">
+      <span class="section-label">التضامن الصحي</span>
+      <h2>تبرعات طبية حديثة</h2>
+      <p>ساهم في مساعدة المحتاجين بالتبرع بالمعدات الطبية غير المستعملة</p>
+    </div>
+    <div class="grid-3" id="donations-preview">
+      <div class="skeleton" style="height:110px;border-radius:var(--radius-lg)"></div>
+      <div class="skeleton" style="height:110px;border-radius:var(--radius-lg)"></div>
+      <div class="skeleton" style="height:110px;border-radius:var(--radius-lg)"></div>
+    </div>
+    <div style="text-align:center;margin-top:2rem">
+      <a href="pages/donations.html" class="btn btn-outline btn-lg">عرض جميع التبرعات</a>
+    </div>
+  </div>
+</section>
+
+<!-- Pharmacy Status Section -->
+<section class="section" style="background:white">
+  <div class="container">
+    <div class="section-header animate-up">
+      <span class="section-label">الصيدليات</span>
+      <h2>صيدليات قريبة منك الآن</h2>
+      <p>اعثر على الصيدليات المفتوحة وصيدليات الدوام الليلي في منطقتك</p>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;margin-bottom:2rem">
+      <a href="pages/pharmacies.html?status=open" class="feature-card animate-up anim-delay-1" style="text-decoration:none;flex:1;min-width:200px;max-width:250px">
+        <div class="feature-icon" style="background:#dcfce7;color:#16a34a">🟢</div>
+        <div class="feature-title">صيدليات مفتوحة</div>
+        <div class="feature-desc">صيدليات مفتوحة الآن وجاهزة لاستقبال الحجوزات</div>
+      </a>
+      <a href="pages/pharmacies.html?status=closed" class="feature-card animate-up anim-delay-2" style="text-decoration:none;flex:1;min-width:200px;max-width:250px">
+        <div class="feature-icon" style="background:#fee2e2;color:#dc2626">🔴</div>
+        <div class="feature-title">صيدليات مغلقة</div>
+        <div class="feature-desc">صيدليات مغلقة مؤقتاً مع مواعيد الفتح</div>
+      </a>
+      <a href="pages/pharmacies.html?permanence=1" class="feature-card animate-up anim-delay-3" style="text-decoration:none;flex:1;min-width:200px;max-width:250px">
+        <div class="feature-icon" style="background:#fef3c7;color:#d97706">🌙</div>
+        <div class="feature-title">دوام الليل</div>
+        <div class="feature-desc">صيدليات على دوام الليل في منطقتك الليلة</div>
+      </a>
+      <a href="pages/labs.html" class="feature-card animate-up anim-delay-4" style="text-decoration:none;flex:1;min-width:200px;max-width:250px">
+        <div class="feature-icon" style="background:#ede9fe;color:#7c3aed">🧪</div>
+        <div class="feature-title">مخابر التحاليل</div>
+        <div class="feature-desc">ابحث عن مخبر للتحاليل الطبية مع الأسعار وأوقات الانتظار</div>
+      </a>
+    </div>
+    <div style="text-align:center">
+      <a href="pages/pharmacies.html" class="btn btn-outline btn-lg">عرض كل الصيدليات</a>
+      <a href="pages/prescription.html" class="btn btn-primary btn-lg" style="margin-right:1rem">📋 رفع وصفة طبية</a>
+    </div>
+  </div>
+</section>
+
+<!-- Features -->
+<section class="section">
+  <div class="container">
+    <div class="section-header animate-up">
+      <span class="section-label">لماذا شفاء ديزاد؟</span>
+      <h2>مميزات المنصة</h2>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card animate-up anim-delay-1">
+        <div class="feature-icon" style="background:var(--primary-light);color:var(--primary)">🔍</div>
+        <div class="feature-title">بحث فوري وذكي</div>
+        <div class="feature-desc">ابحث عن أي دواء بالاسم أو المكوّن وتحقق من توفره في الصيدليات القريبة منك فوراً</div>
+      </div>
+      <div class="feature-card animate-up anim-delay-2">
+        <div class="feature-icon" style="background:var(--secondary-light);color:var(--secondary)">📍</div>
+        <div class="feature-title">تغطية 58 ولاية</div>
+        <div class="feature-desc">شبكة متكاملة من الصيدليات عبر كامل التراب الجزائري للعثور على دوائك بسهولة</div>
+      </div>
+      <div class="feature-card animate-up anim-delay-3">
+        <div class="feature-icon" style="background:hsl(262,83%,95%);color:hsl(262,83%,58%)">🧪</div>
+        <div class="feature-title">مخابر التحاليل</div>
+        <div class="feature-desc">ابحث عن التحليل المطلوب وتحقق من السعر ووقت الانتظار في المخابر القريبة منك</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section">
+  <div class="container">
+    <div class="cta-banner animate-up">
+      <h2>انضم إلى شبكة الصيدليات</h2>
+      <p>سجّل صيدليتك الآن وابدأ في استقبال الحجوزات الإلكترونية وإدارة مخزونك بكفاءة</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+        <a href="pages/pricing.html" class="btn btn-white btn-lg">عرض الباقات</a>
+        <a href="pages/dashboard/pharmacy.html" class="btn btn-lg" style="background:rgba(255,255,255,0.15);color:white;border:1.5px solid rgba(255,255,255,0.3)">لوحة التحكم</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">💊 شفاء ديزاد</div>
+        <p class="footer-desc">منصة البحث عن الأدوية في الجزائر. نربط المرضى بالصيدليات عبر 58 ولاية.</p>
+      </div>
+      <div>
+        <div class="footer-title">روابط سريعة</div>
+        <ul class="footer-links">
+          <li><a href="pages/search.html">بحث عن دواء</a></li>
+          <li><a href="pages/pharmacies.html">دليل الصيدليات</a></li>
+          <li><a href="pages/donations.html">التضامن الصحي</a></li>
+          <li><a href="pages/pricing.html">الاشتراكات</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-title">للمهنيين</div>
+        <ul class="footer-links">
+          <li><a href="pages/dashboard/pharmacy.html">لوحة الصيدلية</a></li>
+          <li><a href="pages/dashboard/med-rep.html">بوابة المندوب</a></li>
+          <li><a href="pages/contact.html">تواصل معنا</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2025 شفاء ديزاد — جميع الحقوق محفوظة</div>
+  </div>
+</footer>
+
+<script src="js/config.js"></script>
+<script src="js/api.js"></script>
+<script src="js/main.js"></script>
+<script src="js/home.js"></script>
+</body>
+</html>
